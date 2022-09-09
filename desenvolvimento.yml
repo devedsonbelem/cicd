@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  box-hg-gateway:
+    image: "ci-cd-project-desenvolvimento:${CODE_SC_HG}"
+    ports:
+      - 8383:3031
+    environment:
+      - nome.ambiente=Desenvolvimento
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
